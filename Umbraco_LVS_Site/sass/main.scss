@@ -1,0 +1,22 @@
+//00 - PLUGINS STYLING
+@import "../sass/00_Plugins/plugins.scss" ;
+
+//01 - HELPERRS STYLING
+@import "../sass/01_Helpers/helpers.scss",
+        "../sass/01_Helpers/normalize.scss";
+
+//02 - BASE STYLING
+@import 
+        "../sass/02_Base/variables.scss",
+        "../sass/02_Base/mixins.scss",
+        "../sass/02_Base/style.scss" ;
+
+//03 - LAYOUTS STYLING
+@import "../sass/03_Layouts/header.scss",
+        "../sass/03_Layouts/footer.scss",
+        "../sass/03_Layouts/frontpage.scss",
+        "../sass/03_Layouts/contact.scss",
+        "../sass/03_Layouts/activity.scss",
+        "../sass/03_Layouts/Whois.scss",
+        "../sass/03_Layouts/vaeresteder.scss";
+

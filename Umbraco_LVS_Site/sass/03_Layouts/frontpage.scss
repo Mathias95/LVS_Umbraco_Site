@@ -1,0 +1,703 @@
+
+//Hero Section begins
+.banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/Banner.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    height: 80vh;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+}
+
+.banner-container{
+    width: 90%;
+    margin: 0 auto;
+    h1{
+        font-size: 2.4rem;
+        font-weight: $semibold;
+        line-height: 3rem;
+        font-weight: bold;
+    }
+    p{
+        margin-bottom: 2.1rem;
+    }
+    a{
+        color: $white-color;
+        text-decoration: none;
+    }
+}
+
+//CTA Section begins
+.cards{
+    padding: 75px 0px;
+    .cards-container{
+        @include max-width-center;
+        text-align: center;
+        h2{
+            margin: 0px 0 20px 0;
+        }
+        p{
+            line-height: 1.8rem;  
+        }
+    }
+}
+
+.card-wrapper{
+    margin-top: 35px;
+    .card-box{
+        
+        margin-bottom: 30px;
+
+        &:last-child{
+            margin-bottom: 0px;
+        }
+        img{
+            border-radius: 10px 10px 0 0;
+        }
+        .card-body{
+            padding: 25px;
+            h3{
+                font-size: 1.1rem;
+                margin: 0;
+            }
+            p{
+                margin: 0.9rem 0;
+                font-size: 1rem;
+            }
+            a{
+                color: $darkgrey-color;
+                text-decoration: none;
+                
+                &:hover{
+                    color: $cta-color;
+                }
+            }
+            i{
+                color: $cta-color;
+            }
+        }
+    }
+}
+
+//About Section begins
+.about{
+    padding-top: 75px;
+    background-color: $light-grey;
+    .about-container{
+        @include max-width-center;
+        h2{
+            font-size: 1.9rem;
+            margin: 0px 0 20px 0;
+            font-weight: bold;
+        }
+        span{
+            line-height: 1.6rem;
+            margin-bottom: 1.25rem;
+            display: block;
+            color: $primary-color;
+            font-style: italic;
+            font-weight: bold;
+        }
+        p{
+            margin-bottom: 2.1rem;
+            line-height: 1.8rem;
+        }
+    }
+}
+
+.about-text-wrapper{
+    margin-bottom: 45px;
+}
+
+.about-img{
+    margin-bottom: -4px; 
+}
+
+//Projects Section begins
+.projects{
+    background-image: linear-gradient(rgba(45, 202, 115, 0.95), rgba(45, 202, 115, 0.95)), url(../img/project_bg.jpg);
+    background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    color: $white-color;
+    padding: 75px 0;
+    .projects-container{
+        @include max-width-center;
+    }
+    .projects-wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+            div{
+                width: 45%;
+                text-align: center; 
+                &:nth-child(1), &:nth-child(2){
+                    margin-bottom: 25px;
+                }
+             h4{
+                font-size: 5rem;
+                margin: 0;
+            }
+        }
+    }
+    .project-info{
+        margin-bottom: 3.1rem;
+        h2{
+            margin: 0px 0 20px 0;
+            font-size: 1.9rem;
+            font-weight: bold;
+        }
+        p{
+            margin-bottom: 2.1rem;
+            font-size: 1rem;
+        }
+    }
+}
+
+//News & Video Section begins
+.news{
+    padding: 75px 0;    
+}
+.video-container{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/video_img.jpg);
+    background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    height: 290px;
+    border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    @include max-width-center;
+        color: $white-color;
+        .video-text-wrapper{
+            margin-bottom: 20px;
+            h2{
+                margin: 0;
+                font-size: 1.3rem;
+            }
+        }
+}
+
+.play-btn{
+    background-color: rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    a{
+        background-color: $cta-color;
+        color: $white-color;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+}
+
+.news-container{
+    @include max-width-center;
+    margin-top: 4.6rem;
+}
+
+.text-wrapper{
+    h2{
+        margin: 0 0 1.25rem 0; 
+    }
+    p{
+        line-height: 1.8rem;
+        margin-bottom: 2.1rem;
+    }
+}
+
+.news-box{
+    margin-top: 2.1rem;
+    position: relative;
+    img{
+        border-radius: $radius;
+    }
+}
+
+.news-text{
+    position: absolute;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    color: $white-color;
+    font-size: 0.9rem;
+    h4{
+        font-size: 1.1rem;
+        width: 250px;
+        margin: 0.9rem 0;
+    }
+    span{
+        border-radius: 5px;
+        background-color: $cta-color;
+        padding: 0.5rem 0.9rem;
+        font-size: 0.75rem;
+    }
+    a{
+        color: $white-color;
+        text-decoration: none;
+        font-size: 0.9rem;
+        &:hover{
+            color: $cta-color;
+        }
+    }
+}
+
+//Testimonial Section begins
+.testimonials{
+    background-color: $primary-color;
+    padding: 75px 0;
+}
+
+.testimonials-container{
+    color: $white-color;
+    text-align: center;
+    @include max-width-center;
+    h2{
+        margin-top: 0px;
+    }
+}
+
+.slider-wrapper{
+    margin-top: 35px;
+}
+
+.box-wrapper{
+    margin-bottom: 30px;
+    color: $darkgrey-color;
+    img{
+        border-radius: 50%;
+        width: 80px;
+    }
+}
+
+.speach-box{
+    position: relative;
+    background-color: $white-color;
+    padding: 30px;
+    margin-bottom: 45px;
+        p{
+            font-style: italic;
+            margin: 0 0 25px 0;
+            font-size: 1rem;
+        }
+        h4{
+            margin: 0;
+        }
+}
+
+.speach-box::after{
+    content: '';
+    position: absolute;
+    left: 45%;
+    top: 100%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid $white-color;
+    clear: both;
+}
+
+//Newsletter Section begins
+.newsletter{
+    padding: 75px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/newsletter-bg.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.newsletter-container{
+    color: $white-color;
+    @include max-width-center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    h2{
+        margin: 0px 0 20px 0;
+    }
+    p{
+        margin: 0 0 15px 0;
+    }
+    a{
+        color: $white-color;
+    }
+}
+
+//Form Element - Style
+.newsletter-input{
+    border: none;
+    border-bottom-width: medium;
+    border-bottom-style: none;
+    border-bottom-color: currentcolor;
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 8px 16px;
+    width: 90%;
+    background-color: transparent;
+    border-bottom: 1px solid #9F9F9F;
+    color: $white-color;
+  &:focus{
+    border-bottom: 1px solid $primary-color;
+    }
+}
+
+.button-form{
+    border:none;
+    margin: 1.5rem 0;
+    padding: 1.1rem 3.75rem;
+}
+
+.social-links{
+    a{
+        font-size: 1.5rem;
+        padding: 0.6rem;
+        display: inline-flex;
+        text-decoration: none;
+        &:hover{
+            color: $cta-color;
+        }
+    }
+}
+
+//Sponsor Section begins
+.spons{
+    padding: 35px 0;
+    background-color: $light-grey;
+    .spons-container{
+        @include max-width-center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        div{
+            width: 45%;
+        &:nth-child(1), &:nth-child(2){
+                margin-bottom: 25px;
+            }
+        }
+    }
+}
+
+/**		MEDIA QUERY - Tablet lille og på højkant 		**/
+@media only screen and (min-width: 768px) {
+
+// Hero
+    .banner-container{
+        h1{
+            margin: 0 0 1.5rem 0;
+            font-size: 3.1rem;
+            line-height: 3.5rem;
+        }
+        p{
+            width: 500px;
+        }
+    }
+
+// CTA Section begins
+    .card-wrapper {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        .card-box{
+            width: 32%;
+            margin-bottom: 0;
+        }
+    }
+
+// About Section begins
+    .about{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        .about-container{
+            h2{
+                font-size: 2.9rem;
+                line-height: 3.5rem;
+            }
+        }
+    }
+
+    .about-img{
+        width: 70%;
+    }
+
+// Projects Section begins
+    .projects{
+        .projects-container{
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+        }
+        .projects-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            order: 1;
+                div{
+                    width: 45%;
+                    text-align: center; 
+                }
+        }
+        .project-info{
+            margin-bottom: 0;
+            width: 45%;
+            h2{
+                font-size: 2.9rem;
+                line-height: 3.5rem;
+            }
+            p{
+                margin-bottom: 2.1rem;
+            }
+        }
+    }
+
+//Video & News Section begins
+    .video-container {
+        height: 565px;
+        flex-direction: row;
+        .video-text-wrapper{
+            text-align: left;
+            margin-bottom: 0px;
+            width: 50%;
+            margin-right: 80px;
+            h2{
+                font-size: 2.9rem;
+                line-height: 3.5rem;
+                margin-bottom: 20px;
+            }
+            p{
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .play-btn{
+        height: 115px;
+        width: 115px;
+        a{
+            height: 75px;
+            width: 75px;
+            display: flex;
+        }
+    }
+
+    .text-wrapper{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            width: 42%;
+        }
+    }       
+
+    .news-box-wrapper{
+        display: flex;
+        justify-content: space-between;
+        .news-box{
+            width: 32%;
+        }
+    }
+
+    .newsletter-container{
+        max-width: 650px;
+        h2{
+           font-size: 1.9rem; 
+        }
+    }
+
+    .signup-form{
+        display: flex;
+        width: 100%;
+        margin: 45px 0;
+    }
+
+    .newsletter-input{
+        text-align: left;
+        margin-right: 25px;
+    }
+
+    .button-form{
+        margin: 0;
+    }
+
+//Testimonials Section begins
+    .slider-wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .box-wrapper{
+        width: 32%;
+        margin-bottom: 0;
+    }
+
+//Sponsor Section
+    .spons{
+        padding: 50px 0;
+        .spons-container{
+            div{
+                width: 20%;
+            &:nth-child(1), &:nth-child(2){
+                    margin-bottom: 0px;
+                }
+                img{
+                    width: 180px;
+                }
+            }
+        }
+    } 
+}
+
+/**		MEDIA QUERY - Computer 		**/ 
+@media only screen and (min-width: 1200px) {
+
+//Hero Section begins
+    .banner-container{
+        width: 1200px;
+        margin: 0 auto;
+        h1{
+            font-size: 3.2rem;
+        }
+        p{
+            margin-bottom: 2.1rem;
+        }
+        a{
+            color: $white-color;
+            text-decoration: none;
+        }
+    }
+
+// CTA Section begins
+    .cards{
+        padding: 110px 0px;
+        .cards-container{
+            max-width: 1200px;
+            text-align: center;
+            h2{
+                font-size: 1.9rem;
+                margin: 0px 0 20px 0;
+            }
+            p{
+                line-height: 1.8rem;   
+            }
+        }
+    }
+
+// About Section begins
+    .about{
+        background-image: url(../img/about_bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        justify-content: center;
+        padding-top: 0px;
+        background-color: $light-grey;
+        height: 1000px;
+        .about-container{
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            h2{
+                font-size: 3.1rem;
+            }
+        }
+    }
+
+    .about-text-wrapper{
+        width: 40%;
+        margin-bottom: 0px;
+    }
+
+    .about-img{
+        width: 45%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+// Project Section begins
+    .projects{
+        padding: 140px 0;
+        .projects-container{
+           max-width: 1200px;
+        }
+        .projects-wrapper{
+                div{
+                    width: 50%;
+                    h4{
+                        font-size: 8rem;
+                    }
+                }
+        }
+        .project-info{
+            width: 35%;
+            h2{
+                font-size: 3.1rem;
+                line-height: 4rem;
+            }
+        }
+    }
+
+//Video & News Section begins
+    .video-container{
+        max-width: 950px;
+    }
+
+    .news{
+        padding: 100px 0px;
+    }
+
+     .news-container{
+        max-width: 1200px;
+    }
+
+    .slider-wrapper{
+        max-width: 1200px;
+        margin: 50px auto 0 auto;
+    }
+
+    .newsletter{
+        padding: 140px 0px;
+        .newsletter-container{
+            max-width: 750px;
+            h2{
+               font-size: 1.9rem; 
+            }
+        }
+    }
+
+//Testimonials Section begins
+    .testimonials{
+        padding: 100px 0px;
+    }
+    .testimonials-container{
+        h2{
+            font-size: 1.9rem;
+        }
+    }
+
+    .spons{
+        .spons-container{
+            max-width: 1200px;
+        }
+    }
+	
+}

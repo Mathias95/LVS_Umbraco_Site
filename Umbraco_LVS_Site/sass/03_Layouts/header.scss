@@ -1,0 +1,133 @@
+#navElements {
+    display: none;
+}
+
+img{
+    width: 100%;
+}
+
+p{
+    line-height: 1.8rem;
+}
+
+//Header
+
+header{
+    background-color: $primary-color;
+}
+
+.header-container{
+    @include max-width-center;
+    justify-content: space-between;
+    a{
+        color: $white-color;
+        text-decoration: none;
+    }
+}
+
+.contact-info{
+    display: flex;
+    a{
+        display: block;
+        padding: 10px;
+    }
+    .fa-phone{
+        transform: rotate(90deg);
+    }
+}
+
+.link-elements{
+    display: none;
+}
+
+//Navigation
+
+#MobileNav{
+    padding: 20px 0px;
+    span{
+        font-size: 22px;
+    }
+}
+
+.nav-container{
+    @include max-width-center;
+    ul{
+        margin: 0;
+        padding-bottom: 20px;
+    }
+        li{
+            padding: 15px 0px;
+            a{
+                color: $darkgrey-color;
+                text-decoration: none;
+                font-weight: $semibold;
+                &:hover{
+                    color: $primary-color; 
+                 }
+            }
+        }
+    }
+
+.logo{
+    display: none;
+}
+
+
+/**		MEDIA QUERY - Tablet lille og på højkant 		**/  
+
+@media only screen and (min-width: 768px) {
+    .header-container{
+        display: flex;
+        align-items: center;
+    }
+
+    .link-elements{
+        display: flex;
+        align-items: center;
+        a{
+            padding: 15px;
+            &:hover{
+                background-color: rgba(60, 76, 95, 0.5);
+            }
+        }
+    }
+
+    #MobileNav{
+        display: none;
+    }
+
+    .nav-container{
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+
+        ul{
+            display: flex !important;
+            padding-bottom: 0;
+            align-items: center;
+
+            li{
+                margin-left: 35px;
+            }
+        }
+    }
+    .logo{
+        display: block;
+        width: 117px;
+    }
+}
+
+/**		MEDIA QUERY - Computer 		**/ 
+
+@media only screen and (min-width: 1200px) {
+    
+    .header-container{
+         max-width: 1200px;
+    }
+
+    .nav-container{
+        max-width: 1200px;
+    }
+
+}
+

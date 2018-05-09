@@ -1,1 +1,38 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+    var allpages = Model.Content.Site().Descendants();
+    var home = Umbraco.TypedContentAtRoot().OfType<Home>().SingleOrDefault();
+}
+
+<header>
+    <div class="header-container">
+        <div class="contact-info">
+            <a href="tel:@home.Telefon"><i class="fas fa-phone"></i> Tlf. @home.Telefon</a>
+            <a href="mailto:@home.Email"><i class="fas fa-envelope"></i> @home.Email</a>
+        </div>
+        <div class="link-elements">
+            <a href="@home.Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="@home.Youtube"><i class="fab fa-youtube"></i></a>
+            <a href="@home.Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</header>
+<nav>
+    <div class="nav-container">
+        <div id="MobileNav">
+            <span id="mobilemenu" class="fas fa-bars"></span>
+        </div>
+        <a class="logo" href="@home.Url"><img src="@home.Logo.Url" alt=""></a>
+        <ul id="navElements">
+
+            @foreach (var page in allpages)
+            {
+                <li>
+                    <a href="@page.Url">@page.Name</a>
+                </li>
+            }
+
+        </ul>
+    </div>
+</nav>

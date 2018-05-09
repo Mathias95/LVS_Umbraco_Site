@@ -2,7 +2,7 @@
 @{
     Layout = null;
     var allpages = Model.Content.Site().Descendants();
-    var home = Umbraco.TypedContentAtRoot().OfType<Home>().SingleOrDefault();
+    var home = Umbraco.TypedContentAtRoot().OfType<Frontpage>().SingleOrDefault();
 }
 
 <header>

@@ -4,7 +4,7 @@
 @{
 
     Layout = "_Master.cshtml";
-    var home = Umbraco.TypedContentAtRoot().OfType<Home>().SingleOrDefault();
+    var home = Umbraco.TypedContentAtRoot().OfType<Frontpage>().SingleOrDefault();
     var vaeresteder = Model.Content.Children<Vaerested>();
 
 }
@@ -86,7 +86,7 @@
 
 
 
-<script type='text/javascript' src="~/scripts/mixitup.min.js"></script>
+<script type='text/javascript' src="~/js/mixitup.min.js"></script>
 <!-- mix it up -->
 <script>
         // var containerEl = document.querySelector('.vaerestederContainer');

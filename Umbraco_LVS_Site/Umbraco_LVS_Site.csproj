@@ -353,7 +353,7 @@
     <Content Include="Views\KontaktOs.cshtml" />
     <Content Include="Views\OmOs.cshtml" />
     <Content Include="Views\_Master.cshtml" />
-    <Content Include="Views\Partials\Utilities\Breadcrumbs.cshtml" />
+    <Content Include="Views\Partials\Utilities\Breadcrumb.cshtml" />
     <Content Include="Views\Partials\Utilities\Footer.cshtml" />
     <Content Include="Views\Partials\Utilities\Navigation.cshtml" />
     <Content Include="Views\Frontpage.cshtml" />

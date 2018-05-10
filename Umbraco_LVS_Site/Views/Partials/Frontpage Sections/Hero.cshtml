@@ -3,13 +3,16 @@
 
 <!-- Hero  -->
 <section class="banner">
-    <div class="banner-container">
-        <div class="banner-text-wrapper">
-            <h1>@Model.Content.HeroHeader</h1>
-            <p>@Model.Content.HeroDescription</p>
-            <a class="cta-button" href="@Model.Content.HeroLink">
-            @Model.Content.HeroCaption <i class="fas fa-arrow-right"></i>
-            </a>
+    <img src="~/img/Banner.jpg" alt="Alternate Text" />
+    <div class="banner-overlay">
+        <div class="banner-container">
+            <div class="banner-text-wrapper">
+                <h1>@Model.Content.HeroHeader</h1>
+                <p>@Model.Content.HeroDescription</p>
+                <a class="cta-button" href="@Model.Content.HeroLink">
+                    @Model.Content.HeroCaption <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </div>
 </section>

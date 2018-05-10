@@ -5,13 +5,15 @@
 <!-- CTA Section begins -->
 <section class="cards">
     <div class="cards-container">
-        <h2>Hvad tilbyder vi som værested</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
+        <div class="headline">
+            <h2>@Umbraco.Field("servicesHeadline")</h2>
+            <p>@Umbraco.Field("servicesSubtext")</p>
+        </div>
         <div class="card-wrapper">
             @foreach (CtaBox b in Model.Content.Services)
             {
                 <div class="card-box wrapper y10">
-                    <a href="@b.BoxLink.Url"><img src="@b.BoxPicture.Url" alt=""></a>
+                    <a href="@b.BoxLink.Url"><img src="@b.BoxPicture.Url?width=385&height=229" alt=""></a>
                     <div class="card-body">
                         <h3>@b.Headline</h3>
                         <p>@b.BoxText</p>

@@ -118,12 +118,12 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Hero Image
+		/// Hero Img
 		///</summary>
-		[ImplementPropertyType("heroImage")]
-		public IPublishedContent HeroImage
+		[ImplementPropertyType("heroImg")]
+		public IPublishedContent HeroImg
 		{
-			get { return this.GetPropertyValue<IPublishedContent>("heroImage"); }
+			get { return this.GetPropertyValue<IPublishedContent>("heroImg"); }
 		}
 
 		///<summary>
@@ -163,6 +163,24 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Services overskrift
+		///</summary>
+		[ImplementPropertyType("servicesHeadline")]
+		public string ServicesHeadline
+		{
+			get { return this.GetPropertyValue<string>("servicesHeadline"); }
+		}
+
+		///<summary>
+		/// Services subtekst
+		///</summary>
+		[ImplementPropertyType("servicesSubtext")]
+		public string ServicesSubtext
+		{
+			get { return this.GetPropertyValue<string>("servicesSubtext"); }
+		}
+
+		///<summary>
 		/// Telefon
 		///</summary>
 		[ImplementPropertyType("telefon")]
@@ -172,12 +190,30 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Testimonial overskrift
+		///</summary>
+		[ImplementPropertyType("testimonialHeadline")]
+		public string TestimonialHeadline
+		{
+			get { return this.GetPropertyValue<string>("testimonialHeadline"); }
+		}
+
+		///<summary>
 		/// Testimonials
 		///</summary>
 		[ImplementPropertyType("testimonials")]
 		public IEnumerable<IPublishedContent> Testimonials
 		{
 			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("testimonials"); }
+		}
+
+		///<summary>
+		/// Testimonials subtekst
+		///</summary>
+		[ImplementPropertyType("testimonialSubtext")]
+		public string TestimonialSubtext
+		{
+			get { return this.GetPropertyValue<string>("testimonialSubtext"); }
 		}
 
 		///<summary>

@@ -484,12 +484,15 @@ header {
     padding-bottom: 20px; }
   .nav-container li {
     padding: 15px 0px; }
-    .nav-container li a {
+    .nav-container li a.nav-link {
       color: #202020;
       text-decoration: none;
       font-weight: 500; }
-      .nav-container li a:hover {
+      .nav-container li a.nav-link:hover {
         color: #2DCA73; }
+    .nav-container li .active {
+      color: #2DCA73;
+      text-decoration: none; }
 
 .logo {
   display: none; }
@@ -592,29 +595,56 @@ header {
     color: #F6F6F6;
     opacity: 0.3; }
 
+/*
+.banner{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/Banner.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+    height: 80vh;
+    color: $white-color;
+    display: flex;
+    align-items: center;
+}
+
+.banner-container{
+    width: 90%;
+    margin: 0 auto;
+}
+*/
 .banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../img/Banner.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 80vh;
-  color: #FDFDFD;
+  height: 50vh;
+  position: relative; }
+  .banner img {
+    display: block;
+    height: 100%;
+    background-position: center; }
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  background-image: linear-gradient(rgba(34, 34, 34, 0.35), rgba(34, 34, 34, 0.35)); }
 
 .banner-container {
-  width: 90%;
-  margin: 0 auto; }
-  .banner-container h1 {
-    font-size: 2.4rem;
-    font-weight: 500;
-    line-height: 3rem;
-    font-weight: bold; }
-  .banner-container p {
-    margin-bottom: 2.1rem; }
-  .banner-container a {
-    color: #FDFDFD;
-    text-decoration: none; }
+  color: #FDFDFD;
+  margin: 0 auto;
+  max-width: 90%; }
+
+.banner-text-wrapper h1 {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 3rem;
+  font-weight: bold; }
+.banner-text-wrapper p {
+  margin-bottom: 2.1rem; }
+.banner-text-wrapper a {
+  color: #FDFDFD;
+  text-decoration: none; }
 
 .cards {
   padding: 75px 0px; }
@@ -635,7 +665,8 @@ header {
   .card-box:last-child {
     margin-bottom: 0px; }
   .card-box img {
-    border-radius: 10px 10px 0 0; }
+    border-radius: 10px 10px 0 0;
+    display: block; }
 
 .card-body {
   padding: 25px; }
@@ -678,6 +709,7 @@ header {
   margin-bottom: 45px; }
 
 .about-img {
+  display: block;
   margin-bottom: -4px; }
 
 .projects {
@@ -909,6 +941,9 @@ header {
 
 /**		MEDIA QUERY - Tablet lille og på højkant 		**/
 @media only screen and (min-width: 768px) {
+  .banner {
+    height: 80vh; }
+
   .banner-container h1 {
     margin: 0 0 1.5rem 0;
     font-size: 3.1rem;
@@ -920,6 +955,10 @@ header {
     margin-top: 35px;
     display: flex;
     justify-content: space-between; }
+
+  .headline {
+    max-width: 70%;
+    margin: 0 auto; }
 
   .card-box {
     width: 32%;
@@ -960,7 +999,8 @@ header {
       margin-bottom: 2.1rem; }
 
   .video-container {
-    height: 565px;
+    height: 450px;
+    max-width: 720px;
     flex-direction: row; }
     .video-container .video-text-wrapper {
       text-align: left;
@@ -968,7 +1008,7 @@ header {
       width: 50%;
       margin-right: 80px; }
       .video-container .video-text-wrapper h2 {
-        font-size: 2.9rem;
+        font-size: 2.5rem;
         line-height: 3.5rem;
         margin-bottom: 20px; }
       .video-container .video-text-wrapper p {
@@ -1094,7 +1134,10 @@ header {
         line-height: 4rem; }
 
   .video-container {
+    height: 600px;
     max-width: 950px; }
+    .video-container h2 {
+      font-size: 2.9rem; }
 
   .news {
     padding: 100px 0px; }
@@ -1625,13 +1668,14 @@ ul > li > p > a {
 .vaerested1 {
   margin: 40px; }
   .vaerested1 h2 {
-    text-align: center; }
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500; }
+  .vaerested1 span {
+    font-weight: 500; }
 
 body > div.grid > div > div:nth-child(n) > div > ul > li:nth-child(n) > p {
   line-height: 2rem; }
-
-.siteInfo {
-  padding-top: 35px; }
 
 div.siteInfo > h1 {
   position: absolute;
@@ -1645,7 +1689,6 @@ div.siteInfo > h1 {
   margin-left: auto;
   justify-content: space-around;
   align-items: center;
-  margin-top: 35px;
   height: 70px; }
 
 .switch {
@@ -1696,7 +1739,9 @@ input:checked + .slider:before {
 
 .filter_info {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px; }
 
 .byNavn {
   line-height: 3.8rem; }
@@ -1738,6 +1783,7 @@ input:checked + .slider:before {
   margin: 35px auto 0; }
 
 .employee-box {
+  width: 100 .employee-box;
   margin-bottom: 35px; }
   .employee-box:last-child {
     margin-bottom: 0px; }
@@ -1745,9 +1791,11 @@ input:checked + .slider:before {
 .overlay-wrapper {
   position: relative; }
   .overlay-wrapper img {
-    display: block; }
+    display: block;
+    border-radius: 10px 10px 0 0; }
 
 .text-overlay {
+  border-radius: 10px 10px 0 0;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -1785,25 +1833,26 @@ input:checked + .slider:before {
     height: 1px;
     content: "";
     display: inherit;
-    background-color: #202020;
+    background-color: #f3f3f3;
     transform: translateX(-50%); }
   .employee-btn:hover {
+    border-radius: 0 0 10px 10px;
     background-color: #EAC435;
     color: #FDFDFD; }
     .employee-btn:hover::before {
-      display: none; }
+      background-color: transparent; }
 
 @media only screen and (min-width: 768px) {
   .employees-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; } }
-.employee-box:last-child {
-  margin-bottom: 35px; }
+    justify-content: space-between; }
 
-.employee-box {
-  width: 32%; }
+  .employee-box:last-child {
+    margin-bottom: 35px; }
 
+  .employee-box {
+    width: 32%; } }
 @media only screen and (min-width: 1200px) {
   .employees-container {
     max-width: 1200px; } }

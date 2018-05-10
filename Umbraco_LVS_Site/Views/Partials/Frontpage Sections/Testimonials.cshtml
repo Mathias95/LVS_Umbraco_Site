@@ -5,9 +5,10 @@
 <!-- Testimonials Section begins -->
 <section class="testimonials">
     <div class="testimonials-container">
-
-        <h2>Hvad synes folket</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
+        <div class="headline">
+            <h2>@Umbraco.Field("testimonialHeadline")</h2>
+            <p>@Umbraco.Field("testimonialSubtext")</p>
+        </div>
         <div class="slider-wrapper">
             @foreach (TestimonialBox box in Model.Content.Testimonials)
             {

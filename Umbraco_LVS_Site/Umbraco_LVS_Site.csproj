@@ -273,7 +273,6 @@
     <Content Include="img\aktivitet_fodbold.jpg" />
     <Content Include="img\aktivitet_fodbold_udendørs.jpg" />
     <Content Include="img\atea_logo.png" />
-    <Content Include="img\Banner.jpg" />
     <Content Include="img\calender_icon.svg" />
     <Content Include="img\clock_icon.svg" />
     <Content Include="img\contact_photo.png" />
@@ -337,6 +336,7 @@
     <Content Include="css\02_Base\variables.css.map" />
     <Content Include="css\03_Layouts\contact.css.map" />
     <Content Include="css\main.css.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Partials\Grid\Editors\Textstring.cshtml" />
@@ -381,6 +381,8 @@
     <Content Include="sass\03_Layouts\vaeresteder.scss" />
     <Content Include="sass\03_Layouts\Whois.scss" />
     <Content Include="sass\main.scss" />
+    <Content Include="Views\Aktiviteter.cshtml" />
+    <Content Include="Views\Medarbejdere.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

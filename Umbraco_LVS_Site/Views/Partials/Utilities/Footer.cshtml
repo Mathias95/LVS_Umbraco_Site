@@ -1,7 +1,7 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
     Layout = null;
-    var allpages = Model.Content.Site().Descendants();
+    var allpages = Model.Content.Site().Children();
     var home = Umbraco.TypedContentAtRoot().OfType<Frontpage>().SingleOrDefault();
 }
 <footer class="site-footer">
@@ -20,6 +20,7 @@
         <div id="footer-sidebar2" class="footer-column">
             <h4>Oversigt</h4>
             <ul>
+                <li><a href="/">Forside</a></li>
                 @foreach (var page in allpages)
                 {
                     <li>

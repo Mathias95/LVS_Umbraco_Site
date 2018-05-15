@@ -82,6 +82,42 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Feature headline
+		///</summary>
+		[ImplementPropertyType("featureHeadline")]
+		public string FeatureHeadline
+		{
+			get { return this.GetPropertyValue<string>("featureHeadline"); }
+		}
+
+		///<summary>
+		/// Feature image
+		///</summary>
+		[ImplementPropertyType("featureImage")]
+		public IPublishedContent FeatureImage
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("featureImage"); }
+		}
+
+		///<summary>
+		/// Feature link
+		///</summary>
+		[ImplementPropertyType("featureLink")]
+		public IPublishedContent FeatureLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("featureLink"); }
+		}
+
+		///<summary>
+		/// Feature subtext
+		///</summary>
+		[ImplementPropertyType("featureSubtext")]
+		public IHtmlString FeatureSubtext
+		{
+			get { return this.GetPropertyValue<IHtmlString>("featureSubtext"); }
+		}
+
+		///<summary>
 		/// Google maps link
 		///</summary>
 		[ImplementPropertyType("googleMapsLink")]
@@ -145,12 +181,39 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Projekter
+		/// Projekt overskrift
 		///</summary>
-		[ImplementPropertyType("projekter")]
-		public IEnumerable<IPublishedContent> Projekter
+		[ImplementPropertyType("projectHeadline")]
+		public string ProjectHeadline
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("projekter"); }
+			get { return this.GetPropertyValue<string>("projectHeadline"); }
+		}
+
+		///<summary>
+		/// Projekt link
+		///</summary>
+		[ImplementPropertyType("projectLink")]
+		public IPublishedContent ProjectLink
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("projectLink"); }
+		}
+
+		///<summary>
+		/// Projekt subtekst
+		///</summary>
+		[ImplementPropertyType("projectSubtext")]
+		public IHtmlString ProjectSubtext
+		{
+			get { return this.GetPropertyValue<IHtmlString>("projectSubtext"); }
+		}
+
+		///<summary>
+		/// Projekt tal
+		///</summary>
+		[ImplementPropertyType("projektTal")]
+		public IEnumerable<IPublishedContent> ProjektTal
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("projektTal"); }
 		}
 
 		///<summary>

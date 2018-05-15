@@ -62,5 +62,14 @@ namespace Umbraco.Web.PublishedContentModels
 		{
 			get { return this.GetPropertyValue<string>("headline"); }
 		}
+
+		///<summary>
+		/// Link button
+		///</summary>
+		[ImplementPropertyType("linkButton")]
+		public IPublishedContent LinkButton
+		{
+			get { return this.GetPropertyValue<IPublishedContent>("linkButton"); }
+		}
 	}
 }

@@ -5,12 +5,12 @@
 <section class="projects">
     <div class="projects-container">
         <div class="project-info">
-            <h2>Fokus på Forandring</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Duis au reprehenderit in voluptate.</p>
-            <a class="cta-button" href="#">KNAP TEKTS <i class="fas fa-arrow-right"></i></a>
+            <h2>@Umbraco.Field("projectHeadline")</h2>
+            <p>@Umbraco.Field("projectSubtext")</p>
+            <a class="cta-button" href="#">LÆS OM PROJEKTET <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="projects-wrapper">
-            @foreach(NumberFeatureBox n in Model.Content.Projekter)
+            @foreach(NumberFeatureBox n in Model.Content.ProjektTal)
             {
                 <div class="count">
                     <h4>@n.NumberHeadline</h4>

@@ -3,7 +3,7 @@
 @{
     Layout = "_Master.cshtml";
 
-    var home = Umbraco.TypedContentAtRoot().OfType<Home>().SingleOrDefault();
+    var home = Umbraco.TypedContentAtRoot().OfType<Frontpage>().SingleOrDefault();
     var Aktiviteter = Model.Content.Children<Aktivitet>();
 
     var months = Aktiviteter
@@ -36,11 +36,7 @@
 
         </div>
         <div class="header-elements">
-            <h2 class="title">@Model.Content.EventPageTitle</h2>
-            <div class="page-description">
-                <p>@Model.Content.EventPageDescription</p>
-            </div>
-            <div class="filter-view">
+                <div class="filter-view">
                 <span>Oversigt</span>
                 <i class="fas fa-list-ul" id="list-view">List</i>
                 <i class="fas fa-th" id="grid-view">Grid</i>

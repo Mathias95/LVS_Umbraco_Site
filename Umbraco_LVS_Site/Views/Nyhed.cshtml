@@ -5,7 +5,7 @@
     var nyheder = Model.Content.Children<Nyhed>();
 
 }
-<h1 class="page-container h1banner">@Umbraco.Field("nHead")</h1>
+<h1 class="page-container h1banner">@Umbraco.Field("bannerHead", recursive: true)</h1>
 <div id="overlayImg">
     <div class="header">
         @{
@@ -39,7 +39,9 @@
         </div>
     </div>
     <div class="nyhed-body wrapper">
-        <h1>@Umbraco.Field("nHead")</h1>
+        <h1 class="nyhed-header">
+            @Umbraco.Field("nHead")
+        </h1>
         <p>
             @Umbraco.Field("nBody")
         </p>

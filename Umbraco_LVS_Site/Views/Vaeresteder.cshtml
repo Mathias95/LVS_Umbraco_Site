@@ -2,12 +2,11 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 
 @{
-
     Layout = "_Master.cshtml";
-    var home = Umbraco.TypedContentAtRoot().OfType<Home>().SingleOrDefault();
+    var home = Umbraco.TypedContentAtRoot().OfType<Frontpage>().SingleOrDefault();
     var vaeresteder = Model.Content.Children<Vaerested>();
-
 }
+
 <h1 class="page-container h1banner">@Umbraco.Field("bannerHead")</h1>
 <div id="overlayImg">
     <div class="header">
@@ -20,15 +19,8 @@
                 <img src="@typedMediaPickerSingle.Url" alt="@typedMediaPickerSingle.GetPropertyValue(" alt")" />
             }
         }
-
     </div>
-
 </div>
-
-
-
-
-
 
 <div class="page-container filter_info">
     <div class="siteInfo">
@@ -55,22 +47,11 @@
     </div>
 </div>
 
-
-
-
-
-
-
-
-
-
-
 <div class="grid">
-
     <div class="vaerestederContainer page-container">
         @foreach (var Vaerested in vaeresteder)
         {
-            <div class="wrapper vWrapper y5 mix @Vaerested.VLandsdel">
+            <div class="wrapper vWrapper mix @Vaerested.VLandsdel">
                 <div class="overlay-wrapper">
                     <img src="@Vaerested.VImg.Url" alt="">
                     <div class="text-overlay">
@@ -92,9 +73,7 @@
     </div>
 </div>
 
-
-
-<script type='text/javascript' src="~/scripts/mixitup.min.js"></script>
+<script type='text/javascript' src="~/js/mixitup.min.js"></script>
 <!-- mix it up -->
 <script>
     // var containerEl = document.querySelector('.vaerestederContainer');

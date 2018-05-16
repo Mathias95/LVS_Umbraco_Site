@@ -383,6 +383,8 @@
     <Content Include="sass\main.scss" />
     <Content Include="Views\Aktiviteter.cshtml" />
     <Content Include="Views\Medarbejdere.cshtml" />
+    <Content Include="Views\Nyhed.cshtml" />
+    <Content Include="Views\Nyheder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

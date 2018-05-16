@@ -24,8 +24,7 @@
 
 <div class="page-container">
     <div class="siteInfo">
-
-        @Html.Partial("Breadcrumb")
+        @Html.Partial("Utilities/Breadcrumb")
     </div>
 </div>
 
@@ -40,6 +39,7 @@
         </div>
     </div>
     <div class="nyhed-body wrapper">
+        <h1>@Umbraco.Field("nHead")</h1>
         <p>
             @Umbraco.Field("nBody")
         </p>

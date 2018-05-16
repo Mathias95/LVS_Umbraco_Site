@@ -385,6 +385,7 @@
     <Content Include="Views\Medarbejdere.cshtml" />
     <Content Include="Views\Nyhed.cshtml" />
     <Content Include="Views\Nyheder.cshtml" />
+    <Content Include="Views\Aktivitet.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

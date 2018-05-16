@@ -145,6 +145,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Event Location
+		///</summary>
+		[ImplementPropertyType("eventLocation")]
+		public string EventLocation
+		{
+			get { return this.GetPropertyValue<string>("eventLocation"); }
+		}
+
+		///<summary>
 		/// Event Phone
 		///</summary>
 		[ImplementPropertyType("eventPhone")]

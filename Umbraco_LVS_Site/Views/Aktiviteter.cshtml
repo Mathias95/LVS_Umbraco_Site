@@ -1,5 +1,116 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Aktiviteter>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-	Layout = "_Master.cshtml";
+    Layout = "_Master.cshtml";
+
+    var home = Umbraco.TypedContentAtRoot().OfType<Home>().SingleOrDefault();
+    var Aktiviteter = Model.Content.Children<Aktivitet>();
+
+    var months = Aktiviteter
+        .Select(a => a.EventDateAndTime)
+        .Distinct();
+
+    var cultureinfo =
+        new System.Globalization.CultureInfo("da-DA");
 }
+
+<h1 class="page-container h1banner">@Umbraco.Field("bannerHead")</h1>
+<div id="overlayImg">
+    <div class="header">
+        @{
+            var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>
+            ("banner");
+            if (typedMediaPickerSingle != null)
+            {
+                <!--<p>@typedMediaPickerSingle.Url</p>-->
+                <img src="@typedMediaPickerSingle.Url" alt="@typedMediaPickerSingle.GetPropertyValue(" alt")" />
+            }
+        }
+    </div>
+</div>
+
+<section class="activity-calender">
+    <div class="page-container">
+        <div class="siteInfo">
+            @Html.Partial("Utilities/Breadcrumb")
+
+        </div>
+        <div class="header-elements">
+            <h2 class="title">@Model.Content.EventPageTitle</h2>
+            <div class="page-description">
+                <p>@Model.Content.EventPageDescription</p>
+            </div>
+            <div class="filter-view">
+                <span>Oversigt</span>
+                <i class="fas fa-list-ul" id="list-view">List</i>
+                <i class="fas fa-th" id="grid-view">Grid</i>
+            </div>
+        </div>
+
+        <div class="grid-view grid">
+            <div class="item-grid-wrapper">
+
+                @foreach (var m in months)
+                {
+
+                    <div class="month-bar">
+                        <p>Måned: @m.ToString("MMMM - yyyy")</p>
+                    </div>
+
+                    var monthEvents = Aktiviteter.
+                    Where(a => a.EventDateAndTime == m);
+
+                    foreach (var me in monthEvents)
+                    {
+                        <div class="activity-grid-item wrapper vWrapper">
+                            <div id="">
+                                <img class="activity-img" src="@me.EventTopImg.Url" alt="aktiviteter">
+                                <div class="activity-title">
+                                    <h3 class="activity-titlename">@me.EventHeadline</h3>
+                                    <span><i class="far fa-calendar-alt"></i>Dato: @me.EventDateAndTime.ToString("dd. MMM")</span>
+                                    <h4 class="list-properties">@me.EventDateAndTime.ToString("dd. MMM", cultureinfo)<br />@me.EventDateAndTime.ToString("ddd", cultureinfo)</h4>
+                                </div>
+                            </div>
+                            <div class="grid-activity-content">
+                                <h3 class="activity-titlename">@me.EventHeadline</h3>
+                                <div class="activity-shortdescription">
+                                    <p>@me.EventInfoText</p>
+                                    <span class="activity-location"><i class="fas fa-map-marker"></i>Lokation: @me.EventLocation</span>
+                                    <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
+                                </div>
+                            </div>
+                            <div class="activity-hover">
+                                <hr>
+                                <a class="readmore-center" href="@me.Url"><p>Læs mere<i class="fas fa-long-arrow-alt-right"></i></p></a>
+                            </div>
+                            <div class="activitylist-button">
+                                <a class="cta-button" href="@me.Url">Læs mere<i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<script>
+
+    $("#list-view").click(function () {
+        $(".grid-view").addClass("list-view").removeClass("grid-view"),
+            $(".item-grid-wrapper").addClass("item-list-wrapper").removeClass("item-grid-wrapper"),
+            $(".activity-grid-item").addClass("activity-list-item").removeClass("activity-grid-item"),
+            $(".grid-activity-content").addClass("list-activity-content").removeClass("grid-activity-content");
+    });
+    $("#grid-view").click(function () {
+        $(".list-view").addClass("grid-view").removeClass("list-view"),
+            $(".item-list-wrapper").addClass("item-grid-wrapper").removeClass("item-list-wrapper"),
+            $(".activity-list-item").addClass("activity-grid-item").removeClass("activity-list-item"),
+            $(".list-activity-content").addClass("grid-activity-content").removeClass("list-activity-content");
+    });
+
+
+</script>

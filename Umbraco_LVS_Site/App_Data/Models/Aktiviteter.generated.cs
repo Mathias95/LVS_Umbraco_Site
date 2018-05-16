@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Aktiviteter</summary>
 	[PublishedContentModel("aktiviteter")]
-	public partial class Aktiviteter : PublishedContentModel
+	public partial class Aktiviteter : PublishedContentModel, IBannerImg
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aktiviteter";
@@ -43,6 +43,24 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Aktiviteter, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Banner
+		///</summary>
+		[ImplementPropertyType("banner")]
+		public IPublishedContent Banner
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerImg.GetBanner(this); }
+		}
+
+		///<summary>
+		/// bannerHead
+		///</summary>
+		[ImplementPropertyType("bannerHead")]
+		public string BannerHead
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerImg.GetBannerHead(this); }
 		}
 	}
 }

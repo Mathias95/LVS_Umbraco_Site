@@ -25,9 +25,7 @@
         </div>
         <a class="logo" href="@home.Url"><img src="@home.Logo.Url" alt=""></a>
         <ul id="navElements">
-
              <li><a class="nav-link" href="/">Forside</a></li>
-
             @foreach (var page in allpages)
             {
                 var navActive = "nav-link";
@@ -39,7 +37,6 @@
                     <a class="@navActive" href="@page.Url">@page.Name</a>
                 </li>
             }
-
         </ul>
     </div>
 </nav>

@@ -1604,9 +1604,7 @@ div.siteInfo > h1 {
   margin-left: auto;
   justify-content: space-around;
   align-items: center;
-  height: 70px;
-  margin-top: 30px;
-  margin-bottom: 30px; }
+  height: 70px; }
 
 .switch {
   display: inline-block;
@@ -1656,9 +1654,9 @@ input:checked + .slider:before {
 
 .filter_info {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 30px; }
+  flex-direction: column;
+  margin-top: 30px;
+  margin-bottom: 30px; }
 
 .byNavn {
   line-height: 3.8rem; }
@@ -1675,8 +1673,8 @@ input:checked + .slider:before {
     margin-bottom: 0; }
 
   .filter_info {
-    margin-top: 30px;
-    margin-bottom: 30px; }
+    flex-direction: row;
+    align-items: center; }
 
   .none {
     display: none; }
@@ -1770,7 +1768,7 @@ input:checked + .slider:before {
   display: flex;
   flex-wrap: wrap;
   max-width: 90%;
-  margin: 0 auto 40px; }
+  margin: 0 auto 60px; }
   .nyheder-container .vWrapper {
     margin-bottom: 30px;
     flex: 0 0 100%; }

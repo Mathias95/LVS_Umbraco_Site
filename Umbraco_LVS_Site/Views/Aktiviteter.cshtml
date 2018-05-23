@@ -36,15 +36,15 @@
 
         </div>
         <div class="header-elements">
-                <div class="filter-view">
+            <div class="filter-view">
                 <span>Oversigt</span>
                 <i class="fas fa-list-ul" id="list-view">List</i>
                 <i class="fas fa-th" id="grid-view">Grid</i>
             </div>
         </div>
 
-        <div class="grid-view grid">
-            <div class="item-grid-wrapper">
+        <div class="grid-view">
+            <div class="item-grid-wrapper is-space-between with-empty-cells">
 
                 @foreach (var m in months)
                 {
@@ -58,31 +58,33 @@
 
                     foreach (var me in monthEvents)
                     {
-                    <div class="activity-grid-item wrapper vWrapper">
-                        <div class="overlay">
-                            <img class="activity-img" src="@me.EventTopImg.Url" alt="aktiviteter">
-                            <div class="activity-title overlay-wrapper">
+                        <div class="activity-grid-item wrapper">
+                            <div class="overlay">
+
+                                <img class="activity-img" src="@me.EventTopImg.Url" alt="aktiviteter">
+                                <div class="activity-title overlay-wrapper">
+                                    <h3 class="activity-titlename">@me.EventHeadline</h3>
+                                    <span><i class="far fa-calendar-alt"></i>Dato: @me.EventDateAndTime.ToString("dd. MMM")</span>
+                                    <h4 class="list-properties">@me.EventDateAndTime.ToString("dd. MMM", cultureinfo)<br />@me.EventDateAndTime.ToString("ddd", cultureinfo)</h4>
+                                </div>
+
+                            </div>
+                            <div class="grid-activity-content">
                                 <h3 class="activity-titlename">@me.EventHeadline</h3>
-                                <span><i class="far fa-calendar-alt"></i>Dato: @me.EventDateAndTime.ToString("dd. MMM")</span>
-                                <h4 class="list-properties">@me.EventDateAndTime.ToString("dd. MMM", cultureinfo)<br />@me.EventDateAndTime.ToString("ddd", cultureinfo)</h4>
+                                <div class="activity-shortdescription">
+                                    <p>@me.EventInfoText</p>
+                                    <span class="activity-location"><i class="fas fa-map-marker"></i>Lokation: @me.EventLocation</span>
+                                    <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
+                                </div>
+                            </div>
+                            <div class="activity-hover">
+                                <hr>
+                                <a class="readmore-center" href="@me.Url"><p>Læs mere<i class="fas fa-long-arrow-alt-right"></i></p></a>
+                            </div>
+                            <div class="activitylist-button">
+                                <a class="cta-button" href="@me.Url">Læs mere<i class="fas fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <div class="grid-activity-content">
-                            <h3 class="activity-titlename">@me.EventHeadline</h3>
-                            <div class="activity-shortdescription">
-                                <p>@me.EventInfoText</p>
-                                <span class="activity-location"><i class="fas fa-map-marker"></i>Lokation: @me.EventLocation</span>
-                                <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
-                            </div>
-                        </div>
-                        <div class="activity-hover">
-                            <hr>
-                            <a class="readmore-center" href="@me.Url"><p>Læs mere<i class="fas fa-long-arrow-alt-right"></i></p></a>
-                        </div>
-                        <div class="activitylist-button">
-                            <a class="cta-button" href="@me.Url">Læs mere<i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
                     }
                 }
 

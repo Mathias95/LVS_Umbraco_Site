@@ -38,12 +38,12 @@
         <div class="header-elements">
                 <div class="filter-view">
                 <span>Oversigt</span>
-                <i class="fas fa-list-ul" id="list-view">List</i>
-                <i class="fas fa-th" id="grid-view">Grid</i>
+                <i class="fas fa-list-ul" id="list-view"></i>
+                <i class="fas fa-th" id="grid-view"></i>
             </div>
         </div>
 
-        <div class="grid-view grid">
+        <div class="grid-view">
             <div class="item-grid-wrapper">
 
                 @foreach (var m in months)
@@ -71,16 +71,15 @@
                             <h3 class="activity-titlename">@me.EventHeadline</h3>
                             <div class="activity-shortdescription">
                                 <p>@me.EventInfoText</p>
-                                <span class="activity-location"><i class="fas fa-map-marker"></i>Lokation: @me.EventLocation</span>
-                                <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
+                                <div class="activity-info">
+                                    <span class="activity-location"><i class="fas fa-map-marker-alt"></i>Lokation: @me.EventLocation</span>
+                                    <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="activity-hover">
-                            <hr>
-                            <a class="readmore-center" href="@me.Url"><p>Læs mere<i class="fas fa-long-arrow-alt-right"></i></p></a>
-                        </div>
+                            <a class="activity-hover" href="@me.Url">Læs mere <i class="fas fa-arrow-right"></i></a>
                         <div class="activitylist-button">
-                            <a class="cta-button" href="@me.Url">Læs mere<i class="fas fa-arrow-right"></i></a>
+                            <a class="cta-button" href="@me.Url">Læs mere <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                     }

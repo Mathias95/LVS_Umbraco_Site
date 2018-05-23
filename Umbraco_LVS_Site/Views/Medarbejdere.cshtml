@@ -26,24 +26,26 @@
     </div>
 </div>
 <section>
-    <div class="employees-container">
-        @foreach (var Medarbejder in medarbejdere)
+    <div class="grid">
+        <div class="employees-container">
+            @foreach (var Medarbejder in medarbejdere)
         {
-        <div class="employee-box wrapper">
-            <div class="overlay-wrapper">
-                <img src="@Medarbejder.Mimage.Url" alt="">
-                <div class="text-overlay">
-                    <div class="employee-info">
-                        <h3>@Medarbejder.MName</h3>
-                        <p>@Medarbejder.MJobtitel</p>
+            <div class="employee-box wrapper vWrapper y5">
+                <div class="overlay-wrapper">
+                    <img src="@Medarbejder.Mimage.Url" alt="">
+                    <div class="text-overlay">
+                        <div class="employee-info">
+                            <h3>@Medarbejder.MName</h3>
+                            <p>@Medarbejder.MJobtitel</p>
+                        </div>
                     </div>
                 </div>
+                <div class="employee-body">
+                    @Medarbejder.MJobInfo
+                </div>
+                <a class="employee-btn" href="tel:@Medarbejder.MTelefon"><i class="fas fa-phone"></i>@Medarbejder.MTelefon</a>
             </div>
-            <div class="employee-body">
-                @Medarbejder.MJobInfo
-            </div>
-            <a class="employee-btn" href="tel:@Medarbejder.MTelefon"><i class="fas fa-phone"></i>@Medarbejder.MTelefon</a>
+    }
         </div>
-        }
     </div>
 </section>

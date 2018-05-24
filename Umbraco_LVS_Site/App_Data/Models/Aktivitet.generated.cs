@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Aktivitet</summary>
 	[PublishedContentModel("aktivitet")]
-	public partial class Aktivitet : PublishedContentModel
+	public partial class Aktivitet : PublishedContentModel, IBaseConent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "aktivitet";
@@ -43,15 +43,6 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Aktivitet, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
-		}
-
-		///<summary>
-		/// Event Attend
-		///</summary>
-		[ImplementPropertyType("eventAttend")]
-		public Umbraco.Web.Models.RelatedLinks EventAttend
-		{
-			get { return this.GetPropertyValue<Umbraco.Web.Models.RelatedLinks>("eventAttend"); }
 		}
 
 		///<summary>
@@ -196,6 +187,33 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent EventTopImg
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("eventTopImg"); }
+		}
+
+		///<summary>
+		/// Content sub text
+		///</summary>
+		[ImplementPropertyType("contentSubText")]
+		public string ContentSubText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseConent.GetContentSubText(this); }
+		}
+
+		///<summary>
+		/// Content text
+		///</summary>
+		[ImplementPropertyType("contentText")]
+		public IHtmlString ContentText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseConent.GetContentText(this); }
+		}
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseConent.GetPageTitle(this); }
 		}
 	}
 }

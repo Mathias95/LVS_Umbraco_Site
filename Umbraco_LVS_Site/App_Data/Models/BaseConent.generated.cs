@@ -20,9 +20,23 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedContentModels
 {
+	// Mixin content Type 1215 with alias "baseConent"
+	/// <summary>BaseConent</summary>
+	public partial interface IBaseConent : IPublishedContent
+	{
+		/// <summary>Content sub text</summary>
+		string ContentSubText { get; }
+
+		/// <summary>Content text</summary>
+		IHtmlString ContentText { get; }
+
+		/// <summary>Page Title</summary>
+		string PageTitle { get; }
+	}
+
 	/// <summary>BaseConent</summary>
 	[PublishedContentModel("baseConent")]
-	public partial class BaseConent : PublishedContentModel
+	public partial class BaseConent : PublishedContentModel, IBaseConent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "baseConent";
@@ -46,13 +60,28 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Content sub text
+		///</summary>
+		[ImplementPropertyType("contentSubText")]
+		public string ContentSubText
+		{
+			get { return GetContentSubText(this); }
+		}
+
+		/// <summary>Static getter for Content sub text</summary>
+		public static string GetContentSubText(IBaseConent that) { return that.GetPropertyValue<string>("contentSubText"); }
+
+		///<summary>
 		/// Content text
 		///</summary>
 		[ImplementPropertyType("contentText")]
 		public IHtmlString ContentText
 		{
-			get { return this.GetPropertyValue<IHtmlString>("contentText"); }
+			get { return GetContentText(this); }
 		}
+
+		/// <summary>Static getter for Content text</summary>
+		public static IHtmlString GetContentText(IBaseConent that) { return that.GetPropertyValue<IHtmlString>("contentText"); }
 
 		///<summary>
 		/// Page Title
@@ -60,7 +89,10 @@ namespace Umbraco.Web.PublishedContentModels
 		[ImplementPropertyType("pageTitle")]
 		public string PageTitle
 		{
-			get { return this.GetPropertyValue<string>("pageTitle"); }
+			get { return GetPageTitle(this); }
 		}
+
+		/// <summary>Static getter for Page Title</summary>
+		public static string GetPageTitle(IBaseConent that) { return that.GetPropertyValue<string>("pageTitle"); }
 	}
 }

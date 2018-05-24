@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Om os</summary>
 	[PublishedContentModel("omOs")]
-	public partial class OmOs : PublishedContentModel
+	public partial class OmOs : PublishedContentModel, IBaseConent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "omOs";
@@ -43,6 +43,42 @@ namespace Umbraco.Web.PublishedContentModels
 		public static PublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<OmOs, TValue>> selector)
 		{
 			return PublishedContentModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+		}
+
+		///<summary>
+		/// Om Cta
+		///</summary>
+		[ImplementPropertyType("aboutCta")]
+		public IEnumerable<IPublishedContent> AboutCta
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("aboutCta"); }
+		}
+
+		///<summary>
+		/// Content sub text
+		///</summary>
+		[ImplementPropertyType("contentSubText")]
+		public string ContentSubText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseConent.GetContentSubText(this); }
+		}
+
+		///<summary>
+		/// Content text
+		///</summary>
+		[ImplementPropertyType("contentText")]
+		public IHtmlString ContentText
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseConent.GetContentText(this); }
+		}
+
+		///<summary>
+		/// Page Title
+		///</summary>
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle
+		{
+			get { return Umbraco.Web.PublishedContentModels.BaseConent.GetPageTitle(this); }
 		}
 	}
 }

@@ -33,10 +33,9 @@
     <div class="page-container">
         <div class="siteInfo">
             @Html.Partial("Utilities/Breadcrumb")
-
         </div>
         <div class="header-elements">
-                <div class="filter-view">
+            <div class="filter-view">
                 <span>Oversigt</span>
                 <i class="fas fa-list-ul" id="list-view"></i>
                 <i class="fas fa-th" id="grid-view"></i>
@@ -44,8 +43,7 @@
         </div>
 
         <div class="grid-view">
-            <div class="item-grid-wrapper">
-
+            <div class="item-grid-wrapper is-space-between with-empty-cells">
                 @foreach (var m in months)
                 {
 
@@ -58,55 +56,33 @@
 
                     foreach (var me in monthEvents)
                     {
-                    <div class="activity-grid-item wrapper vWrapper">
-                        <div class="overlay">
-                            <img class="activity-img" src="@me.EventTopImg.Url" alt="aktiviteter">
-                            <div class="activity-title overlay-wrapper">
-                                <h3 class="activity-titlename">@me.EventHeadline</h3>
-                                <span><i class="far fa-calendar-alt"></i>Dato: @me.EventDateAndTime.ToString("dd. MMM", cultureinfo)</span>
-                                <h4 class="list-properties">@me.EventDateAndTime.ToString("dd. MMM", cultureinfo)</h4>
-                            </div>
-                        </div>
-                        <div class="grid-activity-content">
-                            <h3 class="activity-titlename">@me.EventHeadline</h3>
-                            <div class="activity-shortdescription">
-                                <p>@me.EventInfoText</p>
-                                <div class="activity-info">
-                                    <span class="activity-location"><i class="fas fa-map-marker-alt"></i>Lokation: @me.EventLocation</span>
-                                    <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
+                        <div class="activity-grid-item wrapper vWrapper">
+                            <div class="overlay">
+                                <img class="activity-img" src="@me.EventTopImg.Url" alt="aktiviteter">
+                                <div class="activity-title overlay-wrapper">
+                                    <h3 class="activity-titlename">@me.EventHeadline</h3>
+                                    <span><i class="far fa-calendar-alt"></i>Dato: @me.EventDateAndTime.ToString("dd. MMM", cultureinfo)</span>
+                                    <h4 class="list-properties">@me.EventDateAndTime.ToString("dd. MMM", cultureinfo)<br />@me.EventDateAndTime.ToString("dddd", cultureinfo)</h4>
                                 </div>
                             </div>
-                        </div>
+                            <div class="grid-activity-content">
+                                <h3 class="activity-titlename">@me.EventHeadline</h3>
+                                <div class="activity-shortdescription">
+                                    <p>@me.EventInfoText</p>
+                                    <div class="activity-info">
+                                        <span class="activity-location"><i class="fas fa-map-marker-alt"></i>Lokation: @me.EventLocation</span>
+                                        <span class="activity-timestamp"><i class="far fa-clock"></i>Tidspunkt: @me.EventDateAndTime.ToString("HH:mm")</span>
+                                    </div>
+                                </div>
+                            </div>
                             <a class="activity-hover" href="@me.Url">Læs mere <i class="fas fa-arrow-right"></i></a>
-                        <div class="activitylist-button">
-                            <a class="cta-button" href="@me.Url">Læs mere <i class="fas fa-arrow-right"></i></a>
+                            <div class="activitylist-button">
+                                <a class="cta-button" href="@me.Url">Læs mere <i class="fas fa-arrow-right"></i></a>
+                            </div>
                         </div>
-                    </div>
                     }
                 }
-
             </div>
         </div>
-
     </div>
 </section>
-
-<script>
-    $("#list-view").click(function () {
-        $(".grid-view").addClass("list-view").removeClass("grid-view"),
-            $(".item-grid-wrapper").addClass("item-list-wrapper").removeClass("item-grid-wrapper"),
-            $(".activity-grid-item").addClass("activity-list-item").removeClass("activity-grid-item"),
-            $(".overlay").addClass("no-overlay").removeClass("overlay"),
-            $(".activity-title").removeClass("overlay-wrapper"),
-            $(".grid-activity-content").addClass("list-activity-content").removeClass("grid-activity-content");
-
-    });
-    $("#grid-view").click(function () {
-        $(".list-view").addClass("grid-view").removeClass("list-view"),
-            $(".item-list-wrapper").addClass("item-grid-wrapper").removeClass("item-list-wrapper"),
-            $(".activity-list-item").addClass("activity-grid-item overlay").removeClass("activity-list-item no-overlay"),
-            $(".no-overlay").addClass("overlay").removeClass("no-overlay"),
-            $(".activity-title").addClass("overlay-wrapper"),
-            $(".list-activity-content").addClass("grid-activity-content").removeClass("list-activity-content");
-    });
-</script>

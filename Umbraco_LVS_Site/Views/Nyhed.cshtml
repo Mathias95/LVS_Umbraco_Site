@@ -2,8 +2,7 @@
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
     Layout = "_Master.cshtml";
-    var nyheder = Model.Content.Children<Nyhed>();
-
+    var cultureinfo = new System.Globalization.CultureInfo("da-DA");
 }
 
 <h1 class="page-container h1banner">@Umbraco.Field("bannerHead", recursive: true)</h1>
@@ -30,11 +29,19 @@
 <div class="single-act-container">
     <div class="nyhed-sidebar wrapper">
         <div class="info">
+            <h2>@Model.Content.NDato.ToString("dddd", cultureinfo)</h2>
+            <p>@Model.Content.NDato.ToString("dd. MMM", cultureinfo)</p>
+            <hr />
             <ul>
-                <li> <p><span>Udgivet &#8226</span> @umbraco.library.FormatDateTime(Model.Content.GetPropertyValue("nDato").ToString(), "dd-MM-yyyy")</p> </li>
-                <li> <p><span>Forfatter &#8226</span> @Umbraco.Field("nForfatter")</p> </li>
+                <li> <p> Forfatter &middot; @Umbraco.Field("nForfatter") </p> </li>
+                <li> <p> Kilde &middot; @Umbraco.Field("nKilde") </p> </li>
             </ul>
         </div>
+        @if (Model.Content.ArticleLink.Length > 0)
+        {
+            <a href="@Model.Content.ArticleLink" target="_blank" class="perticipate-btn">Se nyhed<i class="fas fa-arrow-right"></i></a>
+
+        }
     </div>
     <div class="info-wrapper wrapper">
         <div class="info-text">

@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedContentModels
 {
 	/// <summary>Om os</summary>
 	[PublishedContentModel("omOs")]
-	public partial class OmOs : PublishedContentModel, IBaseConent
+	public partial class OmOs : PublishedContentModel, IBannerImg, IBaseConent
 	{
 #pragma warning disable 0109 // new is redundant
 		public new const string ModelTypeAlias = "omOs";
@@ -46,12 +46,57 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
-		/// Om Cta
+		/// Cta bokse
 		///</summary>
-		[ImplementPropertyType("aboutCta")]
-		public IEnumerable<IPublishedContent> AboutCta
+		[ImplementPropertyType("CtaAbout")]
+		public IEnumerable<IPublishedContent> CtaAbout
 		{
-			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("aboutCta"); }
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("CtaAbout"); }
+		}
+
+		///<summary>
+		/// Cta overskrift
+		///</summary>
+		[ImplementPropertyType("ctaAboutHeadline")]
+		public string CtaAboutHeadline
+		{
+			get { return this.GetPropertyValue<string>("ctaAboutHeadline"); }
+		}
+
+		///<summary>
+		/// Illustration Overskrift
+		///</summary>
+		[ImplementPropertyType("illustrationHeadline")]
+		public string IllustrationHeadline
+		{
+			get { return this.GetPropertyValue<string>("illustrationHeadline"); }
+		}
+
+		///<summary>
+		/// Illustration tekst
+		///</summary>
+		[ImplementPropertyType("illustrationText")]
+		public IHtmlString IllustrationText
+		{
+			get { return this.GetPropertyValue<IHtmlString>("illustrationText"); }
+		}
+
+		///<summary>
+		/// Banner
+		///</summary>
+		[ImplementPropertyType("banner")]
+		public IPublishedContent Banner
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerImg.GetBanner(this); }
+		}
+
+		///<summary>
+		/// bannerHead
+		///</summary>
+		[ImplementPropertyType("bannerHead")]
+		public string BannerHead
+		{
+			get { return Umbraco.Web.PublishedContentModels.BannerImg.GetBannerHead(this); }
 		}
 
 		///<summary>

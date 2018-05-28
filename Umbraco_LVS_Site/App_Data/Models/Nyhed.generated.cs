@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Link til ekstern artikel
+		///</summary>
+		[ImplementPropertyType("articleLink")]
+		public string ArticleLink
+		{
+			get { return this.GetPropertyValue<string>("articleLink"); }
+		}
+
+		///<summary>
 		/// nBody
 		///</summary>
 		[ImplementPropertyType("nBody")]
@@ -88,6 +97,15 @@ namespace Umbraco.Web.PublishedContentModels
 		public IPublishedContent NImg
 		{
 			get { return this.GetPropertyValue<IPublishedContent>("nImg"); }
+		}
+
+		///<summary>
+		/// Kilde
+		///</summary>
+		[ImplementPropertyType("nKilde")]
+		public string NKilde
+		{
+			get { return this.GetPropertyValue<string>("nKilde"); }
 		}
 
 		///<summary>

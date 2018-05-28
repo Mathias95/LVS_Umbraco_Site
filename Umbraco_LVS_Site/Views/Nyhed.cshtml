@@ -29,17 +29,18 @@
 <div class="single-act-container">
     <div class="nyhed-sidebar wrapper">
         <div class="nyhed-info">
-            <h2>@Model.Content.NDato.ToString("dddd", cultureinfo)</h2>
-            <p>@Model.Content.NDato.ToString("dd. MMM", cultureinfo)</p>
-            <hr />
+            <div class="nyhed-date">
+                <h2>@Model.Content.NDato.ToString("dddd", cultureinfo)</h2>
+                <p>@Model.Content.NDato.ToString("dd. MMM", cultureinfo)</p>
+            </div>
             <ul>
-                <li> <p> Forfatter &middot; @Umbraco.Field("nForfatter") </p> </li>
-                <li> <p> Kilde &middot; @Umbraco.Field("nKilde") </p> </li>
+                <li><span>Forfatter &#8226</span> @Umbraco.Field("nForfatter")</li>
+                <li><span>Kilde &#8226</span> @Umbraco.Field("nKilde")</li>
             </ul>
         </div>
         @if (Model.Content.ArticleLink.Length > 0)
         {
-            <a href="@Model.Content.ArticleLink" target="_blank" class="perticipate-btn">Se nyhed<i class="fas fa-arrow-right"></i></a>
+            <a href="@Model.Content.ArticleLink" target="_blank" class="perticipate-btn">Læs hele nyheden<i class="fas fa-arrow-right"></i></a>
 
         }
     </div>

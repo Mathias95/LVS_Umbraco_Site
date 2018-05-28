@@ -306,8 +306,8 @@
     <Content Include="img\virksomheds_profile.jpg" />
     <Content Include="img\x.svg" />
     <Content Include="img\youtube.png" />
-    <Content Include="js\javascript.js" />
-    <Content Include="js\mixitup.min.js" />
+    <Content Include="Scripts\javascript.js" />
+    <Content Include="Scripts\mixitup.min.js" />
     <Content Include="Media\Web.config" />
     <Content Include="config\umbracoSettings.config" />
     <Content Include="config\trees.config" />

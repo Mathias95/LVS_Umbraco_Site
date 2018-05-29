@@ -629,7 +629,7 @@ header {
 }
 */
 .banner {
-  height: 50vh;
+  height: 500px;
   position: relative; }
   .banner img {
     display: block;
@@ -652,7 +652,7 @@ header {
   max-width: 90%; }
 
 .banner-text-wrapper h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 500;
   line-height: 3rem;
   font-weight: bold; }
@@ -730,7 +730,7 @@ header {
   margin-bottom: -4px; }
 
 .projects {
-  background-image: linear-gradient(rgba(45, 202, 115, 0.95), rgba(45, 202, 115, 0.95)), url(../img/project_bg.jpg);
+  background-image: linear-gradient(rgba(45, 202, 115, 0.95), rgba(45, 202, 115, 0.95)), url(../media/1259/project_bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -818,31 +818,44 @@ header {
   margin-bottom: 2.1rem; }
 
 .news-box {
-  margin-top: 2.1rem;
-  position: relative; }
+  margin-top: 2.1rem; }
   .news-box img {
-    border-radius: 10px; }
+    border-radius: 10px;
+    display: block; }
 
-.news-text {
+.news-front-wrapper {
+  position: relative; }
+
+.news-text-wrapper {
   position: absolute;
-  bottom: 1.25rem;
-  left: 1.25rem;
+  bottom: 30px;
+  left: 30px; }
+
+.news-text-overlay {
+  position: absolute;
+  border-radius: 10px;
   color: #FDFDFD;
-  font-size: 0.9rem; }
-  .news-text h4 {
+  font-size: 0.9rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(rgba(34, 34, 34, 0.1), rgba(34, 34, 34, 0.5)); }
+  .news-text-overlay h4 {
     font-size: 1.1rem;
     width: 250px;
     margin: 0.9rem 0; }
-  .news-text span {
+  .news-text-overlay span {
     border-radius: 5px;
     background-color: #EAC435;
     padding: 0.5rem 0.9rem;
-    font-size: 0.75rem; }
-  .news-text a {
+    font-size: 0.75rem;
+    display: inline-block; }
+  .news-text-overlay a {
     color: #FDFDFD;
     text-decoration: none;
     font-size: 0.9rem; }
-    .news-text a:hover {
+    .news-text-overlay a:hover {
       color: #EAC435; }
 
 .testimonials {
@@ -893,7 +906,7 @@ header {
 
 .newsletter {
   padding: 75px 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../img/newsletter-bg.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../media/1245/newsletter-bg.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
@@ -953,7 +966,8 @@ header {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; }
+    justify-content: space-between;
+    align-items: center; }
     .spons .spons-container div {
       text-align: center;
       width: 45%; }
@@ -1056,6 +1070,10 @@ header {
     .news-box-wrapper .news-box {
       width: 32%; }
 
+  .news-text-wrapper {
+    bottom: 15px;
+    left: 15px; }
+
   .newsletter-container {
     max-width: 650px; }
     .newsletter-container h2 {
@@ -1084,7 +1102,7 @@ header {
   .spons {
     padding: 50px 0; }
     .spons .spons-container {
-      align-items: center; }
+      align-items: flex-end; }
       .spons .spons-container div {
         width: 20%; }
         .spons .spons-container div:nth-child(1), .spons .spons-container div:nth-child(2) {
@@ -1116,7 +1134,7 @@ header {
         line-height: 1.8rem; }
 
   .about {
-    background-image: url(../img/about_bg.jpg);
+    background-image: url(../media/1204/about_bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -1167,6 +1185,10 @@ header {
 
   .news-container {
     max-width: 1200px; }
+
+  .news-text-wrapper {
+    bottom: 30px;
+    left: 30px; }
 
   .slider-wrapper {
     max-width: 1200px;
@@ -1553,7 +1575,7 @@ ul > li > p > a {
   .activitylist-button {
     margin-right: 40px; } }
 .about-main {
-  padding: 75px; }
+  padding: 75px 0; }
 
 .about-main-container {
   max-width: 90%;
@@ -1646,7 +1668,7 @@ ul > li > p > a {
     margin-bottom: 0; } }
 @media only screen and (min-width: 1200px) {
   .about-main {
-    padding: 100px; }
+    padding: 100px 0; }
 
   .about-main-container {
     max-width: 850px; }

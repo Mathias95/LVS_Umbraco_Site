@@ -1,21 +1,21 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.OmOs>
 @using ContentModels = Umbraco.Web.PublishedContentModels;
 @{
-Layout = "_Master.cshtml";
+    Layout = "_Master.cshtml";
 }
 
 <h1 class="page-container h1banner">@Umbraco.Field("bannerHead")</h1>
 <div id="overlayImg">
     <div class="header">
         @{
-        var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>
+            var typedMediaPickerSingle = Model.Content.GetPropertyValue<IPublishedContent>
             ("banner");
             if (typedMediaPickerSingle != null)
             {
-            <!--<p>@typedMediaPickerSingle.Url</p>-->
-            <img src="@typedMediaPickerSingle.Url" alt="@typedMediaPickerSingle.GetPropertyValue(" alt")" />
+                <!--<p>@typedMediaPickerSingle.Url</p>-->
+                <img src="@typedMediaPickerSingle.Url" alt="@typedMediaPickerSingle.GetPropertyValue(" alt")" />
             }
-            }
+        }
     </div>
 </div>
 
@@ -35,14 +35,14 @@ Layout = "_Master.cshtml";
         <div class="card-wrapper">
             @foreach (CtaBox b in Model.Content.CtaAbout)
             {
-            <div class="card-box wrapper y10">
-                <a href="@b.BoxLink.Url"><img src="@b.BoxPicture.Url" alt=""></a>
-                <div class="card-body">
-                    <h3>@b.Headline</h3>
-                    <p>@b.BoxText</p>
-                    <a href="@b.BoxLink.Url">Læs Mere <i class="fas fa-arrow-right"></i></a>
+                <div class="card-box wrapper y10">
+                    <a href="@b.BoxLink.Url"><img src="@b.BoxPicture.Url" alt=""></a>
+                    <div class="card-body">
+                        <h3>@b.Headline</h3>
+                        <p>@b.BoxText</p>
+                        <a href="@b.BoxLink.Url">Læs Mere <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
-            </div>
             }
         </div>
     </div>
@@ -50,7 +50,7 @@ Layout = "_Master.cshtml";
 <section class="system-view">
     <div class="system-view-container">
         <div class="system-text">
-            <h2>@Umbraco.Field("illutrationHeadline")</h2>
+            <h2>@Umbraco.Field("illustrationHeadline")</h2>
             <p>@Umbraco.Field("illustrationText")</p>
         </div>
         <div class="system-illustration">
